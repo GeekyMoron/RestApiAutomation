@@ -1,4 +1,4 @@
-Feature: validating Gorest Api
+Feature: validating Gorest Api(https://gorest.co.in/)
 @GoRestRegression
 Scenario Outline:Validate Add User Functionality
 Given Add user payload with "<email>" "<first_name>" "<gender>" "<last_name>" "<status>"
