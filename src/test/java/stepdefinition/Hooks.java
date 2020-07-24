@@ -18,5 +18,4 @@ public void beforeScenario() throws IOException
 	s.verify_place_Id_created_maps_to_using("niks","GetPlaceAPI");
 	}
 }
-
 }

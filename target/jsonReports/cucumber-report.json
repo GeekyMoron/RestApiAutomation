@@ -3,56 +3,64 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2020-05-17T10:00:19.406Z",
+        "start_timestamp": "2020-07-24T05:13:50.071Z",
         "line": 11,
-        "name": "Verify that if Place is succesfully added using AddPlace API",
+        "name": "Validate Add User Functionality",
         "description": "",
-        "id": "validating-place-api;verify-that-if-place-is-succesfully-added-using-addplace-api;;2",
+        "id": "validating-gorest-api;validate-add-user-functionality;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 4344000000,
+              "duration": 2218000000,
               "status": "passed"
             },
             "line": 4,
-            "name": "Add Place PayLoad \"Nikhil Tiwari\" \"Hindi/English\" \"29, side layout, cohen 09\"",
+            "name": "Add user payload with \"nik5@gmail.com\" \"Nikhil\" \"male\" \"Tiwari\" \"active\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"Nikhil Tiwari\"",
-                  "offset": 18
+                  "val": "\"nik5@gmail.com\"",
+                  "offset": 22
                 },
                 {
-                  "val": "\"Hindi/English\"",
-                  "offset": 34
+                  "val": "\"Nikhil\"",
+                  "offset": 39
                 },
                 {
-                  "val": "\"29, side layout, cohen 09\"",
-                  "offset": 50
+                  "val": "\"male\"",
+                  "offset": 48
+                },
+                {
+                  "val": "\"Tiwari\"",
+                  "offset": 55
+                },
+                {
+                  "val": "\"active\"",
+                  "offset": 64
                 }
               ],
-              "location": "stepdefinition.StepDefinition.add_Place_PayLoad(java.lang.String,java.lang.String,java.lang.String)"
+              "location": "stepdefinition.StepDefinition.add_user_payload_with(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 3667000000,
+              "duration": 4128000000,
               "status": "passed"
             },
             "line": 5,
-            "name": "User calls \"AddPlaceAPI\" with \"Post\" Http request",
+            "name": "User calls \"AddUserAPI\" with \"Post\" Http request",
             "match": {
               "arguments": [
                 {
-                  "val": "\"AddPlaceAPI\"",
+                  "val": "\"AddUserAPI\"",
                   "offset": 11
                 },
                 {
                   "val": "\"Post\"",
-                  "offset": 30
+                  "offset": 29
                 }
               ],
               "location": "stepdefinition.StepDefinition.user_calls_with_Http_request(java.lang.String,java.lang.String)"
@@ -61,38 +69,37 @@
           },
           {
             "result": {
-              "duration": 9000000,
               "status": "passed"
             },
             "line": 6,
-            "name": "The API call gets success with status code 200",
+            "name": "The API call gets success with status code \"302\"",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
+                  "val": "\"302\"",
                   "offset": 43
                 }
               ],
-              "location": "stepdefinition.StepDefinition.the_API_call_gets_success_with_status_code(java.lang.Integer)"
+              "location": "stepdefinition.StepDefinition.the_API_call_gets_success_with_status_code(java.lang.String)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1508000000,
+              "duration": 1198000000,
               "status": "passed"
             },
             "line": 7,
-            "name": "\"status\" in response body is \"OK\"",
+            "name": "\"_meta.success\" in response body is \"true\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"status\"",
+                  "val": "\"_meta.success\"",
                   "offset": 0
                 },
                 {
-                  "val": "\"OK\"",
-                  "offset": 29
+                  "val": "\"true\"",
+                  "offset": 36
                 }
               ],
               "location": "stepdefinition.StepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
@@ -101,87 +108,89 @@
           },
           {
             "result": {
-              "duration": 662000000,
+              "duration": 25000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "Verify place_Id created maps to \"Nikhil Tiwari\" using \"GetPlaceAPI\"",
+            "name": "User id is present in response",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Nikhil Tiwari\"",
-                  "offset": 32
-                },
-                {
-                  "val": "\"GetPlaceAPI\"",
-                  "offset": 54
-                }
-              ],
-              "location": "stepdefinition.StepDefinition.verify_place_Id_created_maps_to_using(java.lang.String,java.lang.String)"
+              "location": "stepdefinition.StepDefinition.user_id_is_present_in_response()"
             },
             "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@AddPlaceAPI"
-          },
-          {
-            "name": "@Regression"
+            "name": "@GoRestRegression"
           }
         ]
       },
       {
-        "start_timestamp": "2020-05-17T10:00:29.801Z",
-        "before": [
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "match": {
-              "location": "stepdefinition.Hooks.beforeScenario()"
-            }
-          }
-        ],
-        "line": 14,
-        "name": "Verify that delete place api working properly",
+        "start_timestamp": "2020-07-24T05:13:57.814Z",
+        "line": 21,
+        "name": "Validate Update User Functionality",
         "description": "",
-        "id": "validating-place-api;verify-that-delete-place-api-working-properly",
+        "id": "validating-gorest-api;validate-update-user-functionality;;2",
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 10000000,
               "status": "passed"
             },
-            "line": 15,
-            "name": "DeletePlace payload",
+            "line": 14,
+            "name": "\"Update\" user payload with \"nik5@gmail.com\" \"nikhil\" \"male\" \"Tiwari\" \"active\" and userid",
             "match": {
-              "location": "stepdefinition.StepDefinition.deleteplace_payload()"
+              "arguments": [
+                {
+                  "val": "\"Update\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"nik5@gmail.com\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"nikhil\"",
+                  "offset": 44
+                },
+                {
+                  "val": "\"male\"",
+                  "offset": 53
+                },
+                {
+                  "val": "\"Tiwari\"",
+                  "offset": 60
+                },
+                {
+                  "val": "\"active\"",
+                  "offset": 69
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.user_payload_with_and_userid(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 556000000,
+              "duration": 999000000,
               "status": "passed"
             },
-            "line": 16,
-            "name": "User calls \"DeletePlaceAPI\" with \"Post\" Http request",
+            "line": 15,
+            "name": "User calls \"UpdateUserAPI\" with \"Put\" Http request with user id as path parameter",
             "match": {
               "arguments": [
                 {
-                  "val": "\"DeletePlaceAPI\"",
+                  "val": "\"UpdateUserAPI\"",
                   "offset": 11
                 },
                 {
-                  "val": "\"Post\"",
-                  "offset": 33
+                  "val": "\"Put\"",
+                  "offset": 32
                 }
               ],
-              "location": "stepdefinition.StepDefinition.user_calls_with_Http_request(java.lang.String,java.lang.String)"
+              "location": "stepdefinition.StepDefinition.user_calls_with_Http_request_with_user_id_as_path_parameter(java.lang.String,java.lang.String)"
             },
             "keyword": "When "
           },
@@ -189,18 +198,40 @@
             "result": {
               "status": "passed"
             },
-            "line": 17,
-            "name": "The API call gets success with status code 200",
+            "line": 16,
+            "name": "The API call gets success with status code \"200\"",
             "match": {
               "arguments": [
                 {
-                  "val": "200",
+                  "val": "\"200\"",
                   "offset": 43
                 }
               ],
-              "location": "stepdefinition.StepDefinition.the_API_call_gets_success_with_status_code(java.lang.Integer)"
+              "location": "stepdefinition.StepDefinition.the_API_call_gets_success_with_status_code(java.lang.String)"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 21000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "\"result.first_name\" in response body is \"nikhil\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"result.first_name\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"nikhil\"",
+                  "offset": 40
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
           },
           {
             "result": {
@@ -208,16 +239,248 @@
               "status": "passed"
             },
             "line": 18,
-            "name": "\"status\" in response body is \"OK\"",
+            "name": "User id is present in response",
+            "match": {
+              "location": "stepdefinition.StepDefinition.user_id_is_present_in_response()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GoRestRegression"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-07-24T05:13:58.878Z",
+        "line": 31,
+        "name": "Validate Fetch User Functionality",
+        "description": "",
+        "id": "validating-gorest-api;validate-fetch-user-functionality;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "\"Get\" user payload with \"nik5@gmail.com\" \"nikhil\" \"male\" \"Tiwari\" \"active\" and userid",
             "match": {
               "arguments": [
                 {
-                  "val": "\"status\"",
+                  "val": "\"Get\"",
                   "offset": 0
                 },
                 {
-                  "val": "\"OK\"",
-                  "offset": 29
+                  "val": "\"nik5@gmail.com\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"nikhil\"",
+                  "offset": 41
+                },
+                {
+                  "val": "\"male\"",
+                  "offset": 50
+                },
+                {
+                  "val": "\"Tiwari\"",
+                  "offset": 57
+                },
+                {
+                  "val": "\"active\"",
+                  "offset": 66
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.user_payload_with_and_userid(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 938000000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User calls \"FetchUserAPI\" with \"Get\" Http request with user id as path parameter",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"FetchUserAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Get\"",
+                  "offset": 31
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.user_calls_with_Http_request_with_user_id_as_path_parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "The API call gets success with status code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 43
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.the_API_call_gets_success_with_status_code(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 63000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "\"_meta.success\" in response body is \"true\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"_meta.success\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"true\"",
+                  "offset": 36
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User id is present in response",
+            "match": {
+              "location": "stepdefinition.StepDefinition.user_id_is_present_in_response()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GoRestRegression"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-07-24T05:13:59.914Z",
+        "line": 40,
+        "name": "Validate Delete User Functionality",
+        "description": "",
+        "id": "validating-gorest-api;validate-delete-user-functionality;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "\"Delete\" user payload with \"nik5@gmail.com\" \"nikhil\" \"male\" \"Tiwari\" \"active\" and userid",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Delete\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"nik5@gmail.com\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"nikhil\"",
+                  "offset": 44
+                },
+                {
+                  "val": "\"male\"",
+                  "offset": 53
+                },
+                {
+                  "val": "\"Tiwari\"",
+                  "offset": 60
+                },
+                {
+                  "val": "\"active\"",
+                  "offset": 69
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.user_payload_with_and_userid(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 937000000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "User calls \"DeleteUserAPI\" with \"Delete\" Http request with user id as path parameter",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"DeleteUserAPI\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"Delete\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.user_calls_with_Http_request_with_user_id_as_path_parameter(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "The API call gets success with status code \"200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"200\"",
+                  "offset": 43
+                }
+              ],
+              "location": "stepdefinition.StepDefinition.the_API_call_gets_success_with_status_code(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "\"_meta.success\" in response body is \"true\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"_meta.success\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"true\"",
+                  "offset": 36
                 }
               ],
               "location": "stepdefinition.StepDefinition.in_response_body_is(java.lang.String,java.lang.String)"
@@ -227,19 +490,16 @@
         ],
         "tags": [
           {
-            "name": "@DeletePlaceAPI"
-          },
-          {
-            "name": "@Regression"
+            "name": "@GoRestRegression"
           }
         ]
       }
     ],
-    "name": "Validating Place Api",
+    "name": "validating Gorest Api",
     "description": "",
-    "id": "validating-place-api",
+    "id": "validating-gorest-api",
     "keyword": "Feature",
-    "uri": "file:src/test/java/features/PlaceValidation.feature",
+    "uri": "file:src/test/java/features/GoRest.feature",
     "tags": []
   }
 ]

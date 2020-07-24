@@ -1,133 +1,257 @@
 Request method:	POST
-Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Request URI:	https://gorest.co.in/public-api/users
 Proxy:			<none>
 Request params:	<none>
-Query params:	key=qaclick123
+Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Accept=*/*
+Headers:		Authorization=Bearer 0ZTD7-Lu2YJYD_EJj2ABbIrBqMV4lhNZKO6J
+				Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "location": {
-        "lat": -38.383494,
-        "lng": 45.0
-    },
-    "accuracy": 50,
-    "name": "Nikhil Tiwari",
-    "phone_number": "(+91) 983 893 3937",
-    "address": "29, side layout, cohen 09",
-    "types": [
-        "shoe park",
-        "shop",
-        "don"
-    ],
-    "website": "https://rahulshettyacademy.com",
-    "language": "Hindi/English"
+    "email": "nik5@gmail.com",
+    "status": "active",
+    "first_name": "Nikhil",
+    "last_name": "Tiwari",
+    "gender": "male"
 }
-HTTP/1.1 200 OK
-Date: Sun, 17 May 2020 10:00:30 GMT
-Server: Apache/2.4.18 (Ubuntu)
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: POST
-Access-Control-Max-Age: 3600
-Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 194
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-Content-Type: application/json;charset=UTF-8
+HTTP/1.1 302 Moved Temporarily
+Server: nginx
+Date: Fri, 24 Jul 2020 05:14:31 GMT
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept
+X-Rate-Limit-Limit: 30
+X-Rate-Limit-Remaining: 29
+X-Rate-Limit-Reset: 2
+Location: https://gorest.co.in/public-api/users/72575
+Set-Cookie: _csrf=436e65d989cbf288f924672ebf40086f77118b855f0ca763f6312fc664e16e2ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%225hGOAH0KEw5HO4wGp0QpU7kkPBJQbPHD%22%3B%7D; path=/; HttpOnly
+X-Frame-Options: sameorigin
 
 {
-    "status": "OK",
-    "place_id": "0fdcebde47f53ac2e59750807547ced2",
-    "scope": "APP",
-    "reference": "1bf80f20f3448ce1f03bf96f383935c01bf80f20f3448ce1f03bf96f383935c0",
-    "id": "1bf80f20f3448ce1f03bf96f383935c0"
+    "_meta": {
+        "success": true,
+        "code": 201,
+        "message": "A resource was successfully created in response to a POST request. The Location header contains the URL pointing to the newly created resource.",
+        "rateLimit": {
+            "limit": 30,
+            "remaining": 29,
+            "reset": 2
+        }
+    },
+    "result": {
+        "id": "72575",
+        "first_name": "Nikhil",
+        "last_name": "Tiwari",
+        "gender": "male",
+        "dob": null,
+        "email": "nik5@gmail.com",
+        "phone": null,
+        "website": null,
+        "address": null,
+        "status": "active",
+        "_links": {
+            "self": {
+                "href": "https://gorest.co.in/public-api/users/72575"
+            },
+            "edit": {
+                "href": "https://gorest.co.in/public-api/users/72575"
+            },
+            "avatar": {
+                "href": null
+            }
+        }
+    }
+}
+Request method:	PUT
+Request URI:	https://gorest.co.in/public-api/users/72575
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 0ZTD7-Lu2YJYD_EJj2ABbIrBqMV4lhNZKO6J
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "email": "nik5@gmail.com",
+    "status": "active",
+    "first_name": "nikhil",
+    "last_name": "Tiwari",
+    "gender": "male"
+}
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 24 Jul 2020 05:14:34 GMT
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept
+X-Rate-Limit-Limit: 30
+X-Rate-Limit-Remaining: 29
+X-Rate-Limit-Reset: 2
+Set-Cookie: _csrf=75b9d256a2f6731de12848daae01c249cea43737158913b75815d85a29e9a514a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ifae-0_iir6wC8rzOvFQwA6-9ouXoouZ%22%3B%7D; path=/; HttpOnly
+X-Frame-Options: sameorigin
+Content-Encoding: gzip
+
+{
+    "_meta": {
+        "success": true,
+        "code": 200,
+        "message": "OK. Everything worked as expected.",
+        "rateLimit": {
+            "limit": 30,
+            "remaining": 29,
+            "reset": 2
+        }
+    },
+    "result": {
+        "id": "72575",
+        "first_name": "nikhil",
+        "last_name": "Tiwari",
+        "gender": "male",
+        "dob": null,
+        "email": "nik5@gmail.com",
+        "phone": null,
+        "website": null,
+        "address": null,
+        "status": "active",
+        "_links": {
+            "self": {
+                "href": "https://gorest.co.in/public-api/users/72575"
+            },
+            "edit": {
+                "href": "https://gorest.co.in/public-api/users/72575"
+            },
+            "avatar": {
+                "href": null
+            }
+        }
+    }
 }
 Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=0fdcebde47f53ac2e59750807547ced2
+Request URI:	https://gorest.co.in/public-api/users/72575
 Proxy:			<none>
 Request params:	<none>
-Query params:	key=qaclick123
-				place_id=0fdcebde47f53ac2e59750807547ced2
+Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Accept=*/*
+Headers:		Authorization=Bearer 0ZTD7-Lu2YJYD_EJj2ABbIrBqMV4lhNZKO6J
+				Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "location": {
-        "lat": -38.383494,
-        "lng": 45.0
-    },
-    "accuracy": 50,
-    "name": "Nikhil Tiwari",
-    "phone_number": "(+91) 983 893 3937",
-    "address": "29, side layout, cohen 09",
-    "types": [
-        "shoe park",
-        "shop",
-        "don"
-    ],
-    "website": "https://rahulshettyacademy.com",
-    "language": "Hindi/English"
+    "email": "nik5@gmail.com",
+    "status": "active",
+    "first_name": "nikhil",
+    "last_name": "Tiwari",
+    "gender": "male"
 }
 HTTP/1.1 200 OK
-Date: Sun, 17 May 2020 10:00:32 GMT
-Server: Apache/2.4.18 (Ubuntu)
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: POST
-Access-Control-Max-Age: 3600
-Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 270
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-Content-Type: application/json;charset=UTF-8
+Server: nginx
+Date: Fri, 24 Jul 2020 05:14:35 GMT
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept
+X-Rate-Limit-Limit: 30
+X-Rate-Limit-Remaining: 28
+X-Rate-Limit-Reset: 4
+Set-Cookie: _csrf=f2800e4a94ae3b5617bb4db3fe44d6be5671c91fd6b2f15771982262e5bea73ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22oinDCil-VBkgUoSYgj8E91sbAomuNmye%22%3B%7D; path=/; HttpOnly
+X-Frame-Options: sameorigin
+Content-Encoding: gzip
 
 {
-    "location": {
-        "latitude": "-38.383494",
-        "longitude": "45"
+    "_meta": {
+        "success": true,
+        "code": 200,
+        "message": "OK. Everything worked as expected.",
+        "rateLimit": {
+            "limit": 30,
+            "remaining": 28,
+            "reset": 4
+        }
     },
-    "accuracy": "50",
-    "name": "Nikhil Tiwari",
-    "phone_number": "(+91) 983 893 3937",
-    "address": "29, side layout, cohen 09",
-    "types": "shoe park,shop,don",
-    "website": "https://rahulshettyacademy.com",
-    "language": "Hindi/English"
+    "result": {
+        "id": "72575",
+        "first_name": "nikhil",
+        "last_name": "Tiwari",
+        "gender": "male",
+        "dob": null,
+        "email": "nik5@gmail.com",
+        "phone": null,
+        "website": null,
+        "address": null,
+        "status": "active",
+        "_links": {
+            "self": {
+                "href": "https://gorest.co.in/public-api/users/72575"
+            },
+            "edit": {
+                "href": "https://gorest.co.in/public-api/users/72575"
+            },
+            "avatar": {
+                "href": null
+            }
+        }
+    }
 }
-Request method:	POST
-Request URI:	https://rahulshettyacademy.com/maps/api/place/delete/json?key=qaclick123
+Request method:	DELETE
+Request URI:	https://gorest.co.in/public-api/users/72575
 Proxy:			<none>
 Request params:	<none>
-Query params:	key=qaclick123
+Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Accept=*/*
+Headers:		Authorization=Bearer 0ZTD7-Lu2YJYD_EJj2ABbIrBqMV4lhNZKO6J
+				Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "place_id": "0fdcebde47f53ac2e59750807547ced2"
+    "email": "nik5@gmail.com",
+    "status": "active",
+    "first_name": "nikhil",
+    "last_name": "Tiwari",
+    "gender": "male"
 }
 HTTP/1.1 200 OK
-Date: Sun, 17 May 2020 10:00:33 GMT
-Server: Apache/2.4.18 (Ubuntu)
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: POST
-Access-Control-Max-Age: 3600
-Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 15
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-Content-Type: application/json;charset=UTF-8
+Server: nginx
+Date: Fri, 24 Jul 2020 05:14:36 GMT
+Content-Type: application/json; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Vary: Accept
+X-Rate-Limit-Limit: 30
+X-Rate-Limit-Remaining: 27
+X-Rate-Limit-Reset: 6
+Set-Cookie: _csrf=838790ad3da9ca3bc363e4d6ec43969c06f766a476364e42803a8c4051afdd93a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22SIykbwkG5W8KusnnPQOfJkJRWGB58Vky%22%3B%7D; path=/; HttpOnly
+X-Frame-Options: sameorigin
+Content-Encoding: gzip
 
 {
-    "status": "OK"
+    "_meta": {
+        "success": true,
+        "code": 204,
+        "message": "The request was handled successfully and the response contains no body content.",
+        "rateLimit": {
+            "limit": 30,
+            "remaining": 27,
+            "reset": 6
+        }
+    },
+    "result": null
 }

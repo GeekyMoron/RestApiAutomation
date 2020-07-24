@@ -3,6 +3,7 @@ package resources;
 import java.util.ArrayList;
 
 import pojo.GoogleAPIPojo;
+import pojo.Gorestinput;
 import pojo.LocationPOJO;
 
 public class TestData {
@@ -31,5 +32,15 @@ public String DeletePlacePayload(String place_id)
 	return "{\r\n" + 
 			"    \"place_id\":\""+place_id+"\"\r\n" + 
 			"}";
+}
+public Gorestinput gorestpayload(String email,String first_name,String gender,String last_name,String status)
+{
+	Gorestinput go=new Gorestinput();
+	go.setEmail(email);
+	go.setFirst_name(first_name);
+	go.setGender(gender);
+	go.setLast_name(last_name);
+	go.setStatus(status);
+	return go;
 }
 }

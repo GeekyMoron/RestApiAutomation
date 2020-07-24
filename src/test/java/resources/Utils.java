@@ -21,6 +21,7 @@ import io.restassured.filter.Filter;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
+import io.restassured.http.Header;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -33,7 +34,7 @@ public RequestSpecification requestSpecification() throws IOException
 {
 	if(res==null) {
 	PrintStream log=new PrintStream(new FileOutputStream("logging.txt"));
-	res=new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("key","qaclick123").setContentType(ContentType.JSON)
+	res=new RequestSpecBuilder().setBaseUri(getGlobalValue("baseUrl")).addQueryParam("key","qaclick123").setContentType(ContentType.JSON)
 			.addFilter(RequestLoggingFilter.logRequestTo(log))
 			.addFilter(ResponseLoggingFilter.logResponseTo(log))
 			.build();//log request to print stream is for mentioning where do we need to log in file or either print
@@ -41,16 +42,17 @@ public RequestSpecification requestSpecification() throws IOException
 	}
 	return res;
 }
-public static String getGlobalValue(String key) throws IOException // static because accessing a method with out makin object
+public static String getGlobalValue(String key) throws IOException // static because accessing a method with out making object
 {
 	Properties p=new Properties();//for reading properties file
-	FileInputStream fs=new FileInputStream("F:\\Selenium_workspace\\Api_automation\\src\\test\\java\\resources\\global.properties");//getting file location
+	FileInputStream fs=new FileInputStream("F:\\Selenium_workspace\\RestApiAutomation\\src\\test\\java\\resources\\global.properties");//getting file location
 	p.load(fs);// loading file through properties file
 	return p.getProperty(key);
 }
 public static String getJsonpath(Response response,String Key)
 {
 	String r=response.asString();
+	//System.out.println(r);
 	JsonPath js=new JsonPath(r);
 	return js.get(Key).toString();
 }
@@ -58,7 +60,7 @@ public ArrayList<String> getDatathroughExcel(String testcase) throws IOException
 {
 	//file input stream object
 			ArrayList<String> a=new ArrayList<String>();
-			FileInputStream fi=new FileInputStream("F:\\Selenium_workspace\\Api_automation\\src\\test\\Excel-data-Rest.xlsx");
+			FileInputStream fi=new FileInputStream("F:\\Selenium_workspace\\RestApiAutomation\\src\\test\\Excel-data-Rest.xlsx");
 	        XSSFWorkbook workbook=new XSSFWorkbook(fi);
 	        int number=workbook.getNumberOfSheets();
 	        for(int i=0;i<number;i++)
@@ -105,5 +107,18 @@ public ArrayList<String> getDatathroughExcel(String testcase) throws IOException
 	    	  }
 	          }
 	        return a;
+}
+public RequestSpecification gorestrequestSpecification() throws IOException
+{
+	if(res==null) {
+	PrintStream log=new PrintStream(new FileOutputStream("logging.txt"));
+	res=new RequestSpecBuilder().setBaseUri(getGlobalValue("gorestbaseUrl")).addHeader("Authorization", "Bearer " + getGlobalValue("accesstoken"))
+			.setContentType(ContentType.JSON)
+			.addFilter(RequestLoggingFilter.logRequestTo(log))
+			.addFilter(ResponseLoggingFilter.logResponseTo(log))
+			.build();//log request to print stream is for mentioning where do we need to log in file or either print
+	return res;
+	}
+	return res;
 }
 }
